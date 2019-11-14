@@ -14,7 +14,6 @@ city. This is implemented in Python.
 chicago.csv
 new_york_city.csv
 washington.csv
-readme.txt
 
 ### Credits
 https://towardsdatascience.com/exploring-toronto-bike-share-ridership-using-python-3dc87d35cb62
