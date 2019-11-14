@@ -130,6 +130,7 @@ def user_stats(df, city):
         print('\nThe most recent year of birth is ( {} ).\n'.format(most_recent_year))
         most_common_year = int(df['Birth Year'].mode())
         print('\nThe most common year of birth is ( {} ).\n'.format(most_common_year))
+        print ( "\nThis took %s seconds." % (time.time () - start_time) )
         print('-' * 40)
     else:
         pass
