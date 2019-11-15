@@ -1,5 +1,6 @@
 import pandas as pd
 import itertools
+import time
 
 # CITY_DATA is a dictionary that connect city name with their CSV data file.
 CITY_DATA = {'chicago': 'chicago.csv',
@@ -84,7 +85,7 @@ def time_stats(df, month, day):
     print('Most popular hour is ( {} ) .'.format(most_common_start_hour))
     most_common_end_hour = df['End hour'].mode()[0]
     print('Most common end hour is ( {} ) .'.format(most_common_end_hour))
-
+    print ( "\nThis took %s seconds." % (time.time () - start_time) )
     print('-' * 40)
 
 
@@ -98,6 +99,7 @@ def station_stats(df):
     combination_trip = df['Start Station'].astype(str) + ' to ' + df['End Station'].astype(str)
     most_frequent_trip = combination_trip.value_counts().index[0]
     print('\nMost popular trip is from ( {} ) .\n'.format(most_frequent_trip))
+    print ( "\nThis took %s seconds." % (time.time () - start_time) )
     print('-' * 40)
 
 
@@ -108,6 +110,7 @@ def trip_duration_state(df):
     print('Total travel time is ( {} ).'.format(total_travel_time))
     mean_travel_time = int(df['Trip Duration'].mean())
     print('The mean of travel time is ( {} ).'.format(mean_travel_time))
+    print ( "\nThis took %s seconds." % (time.time () - start_time) )
     print('-' * 40)
 
 
@@ -127,6 +130,7 @@ def user_stats(df, city):
         print('\nThe most recent year of birth is ( {} ).\n'.format(most_recent_year))
         most_common_year = int(df['Birth Year'].mode())
         print('\nThe most common year of birth is ( {} ).\n'.format(most_common_year))
+        print ( "\nThis took %s seconds." % (time.time () - start_time) )
         print('-' * 40)
     else:
         pass
